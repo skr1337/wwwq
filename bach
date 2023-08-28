@@ -1616,12 +1616,12 @@ do
 
     if UserInputS.TouchEnabled then
         combat:AddTextbox({
-            Name = "Kill Aura Range (0-50)",
+            Name = "Kill Aura Range (0-1000)",
             Default = tostring(settings.KA_Range),
             TextDisappear = false,
             Callback = function(text)
                 local n = tonumber(text)
-                if n and n >= 0 and n <= 50 then
+                if n and n >= 0 and n <= 1000 then
                     settings.KA_Range = n
                 end
             end
@@ -1630,7 +1630,7 @@ do
         combat:AddSlider({
             Name = "Kill Aura Range",
             Min = 0,
-            Max = 50,
+            Max = 1000,
             Default = settings.KA_Range,
             Color = Color3.new(255, 255, 255),
             Increment = 1,
